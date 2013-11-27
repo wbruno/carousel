@@ -12,9 +12,12 @@
         Carousel.init({
             $obj: document.getElementById("carousel"),
             $prev: document.getElementById("prev"),
-            $bullets: document.getElementsByClassName("bullet"),
             $next: document.getElementById("next"),
-            NUMBER_SLIDES: 3
+            $pager: document.getElementById("pager"),
+            NUMBER_SLIDES: document.getElementsByClassName("carousel-item").length,
+            onMove: function(step) {
+                console.log(step);
+            }
         });
 
     });

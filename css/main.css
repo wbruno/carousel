@@ -24,13 +24,19 @@ p { margin-bottom: 15px; }
 .step0 #carousel-inner { left: 0; }
 .step1 #carousel-inner { left: -100%; }
 .step2 #carousel-inner { left: -200%; }
+.step3 #carousel-inner { left: -300%; }
+.step4 #carousel-inner { left: -400%; }
+
+.carousel-3-items #carousel-inner { width: 300%; }
+.carousel-3-items .carousel-item { width: 33.33%; }
+.carousel-3-items #pager { width: 140px; }
 
 
 #carousel-inner {
     position: absolute;
     top: 0;
     left: 0;
-    width: 300%;
+    width: 400%;
     -webkit-transition: all 1.2s;
        -moz-transition: all 1.2s;
         -ms-transition: all 1.2s;
@@ -40,30 +46,37 @@ p { margin-bottom: 15px; }
 .carousel-item {
     height: 300px;
     position: relative;
-    width: 33%;
+    width: 25%;
     z-index: 10;
 }
 
 /* pager */
 #pager {
     background: #333;
-    width: 140px;
+    width: 155px;
     height: 26px;
     padding: 9px 15px 0;
     border-radius: 7px;
     z-index: 11;
 }
-#prev,
-#next { cursor: pointer; }
+.pager-arrow { 
+    cursor: pointer;
+    background: url('../images/sprite-arrows.png') no-repeat;
+    width: 10px; height: 16px;
+}
 #prev {
+    background-position: -10px bottom;
     border-right: 1px solid #666;
     padding-right: 5px;
     margin-right: 29px;
 }
 #next {
+    background-position: 5px bottom;
     border-left: 1px solid #666;
     padding-left: 5px;
 }
+#prev.is-active { background-position: -10px top; }
+#next.is-active { background-position: 5px top; }
 .bullet {
     width: 10px; height: 10px;
     border-radius: 50%;
