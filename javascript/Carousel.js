@@ -87,32 +87,32 @@ Carousel.createBullets = function(){
     }
 
     Carousel.$pager.getElementsByClassName("bullet")[0].classList.add("is-active");
-
 };
 Carousel.events = function() {
     Carousel.$next.addEventListener("click", Carousel.next);
     Carousel.$prev.addEventListener("click", Carousel.prev);
     Carousel.$pager.addEventListener("click", Carousel.bullet);
 };
-
-Carousel.init = function(config) {
-    var classCarousel = "carousel-" + config.NUMBER_SLIDES + "-items";
-
+Carousel.config = function(config) {
     Carousel.$obj = config.$obj || document.createElement("xpto");
     Carousel.$prev = config.$prev || document.createElement("xpto");
     Carousel.$next = config.$next || document.createElement("xpto");
     Carousel.$pager = config.$pager || document.createElement("xpto");
-
-    Carousel.bulletsClass = config.bulletsClass || "bullet";
-    Carousel.$bullets = Carousel.$pager.getElementsByClassName(Carousel.bulletsClass);
     Carousel.onMove = config.onMove || function(){}
     Carousel.NUMBER_SLIDES = config.NUMBER_SLIDES;
+    Carousel.bulletsClass = config.bulletsClass || "bullet";
+};
+Carousel.init = function(config) {
+    var classCarousel = "carousel-" + config.NUMBER_SLIDES + "-items";
+
+    Carousel.config(config);
+
+    Carousel.$bullets = Carousel.$pager.getElementsByClassName(Carousel.bulletsClass);
 
     Carousel.$pager.classList.add(classCarousel);
     Carousel.$obj.classList.add(classCarousel);
     Carousel.createBullets();
 
     Carousel.step = 0;
-
     Carousel.events();
 };
