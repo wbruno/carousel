@@ -1,0 +1,4 @@
+carousel
+========
+
+Simple VanillaJS Carousel
