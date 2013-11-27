@@ -1,4 +1,4 @@
-carousel
+Carousel
 ========
 
 Simple VanillaJS Carousel
